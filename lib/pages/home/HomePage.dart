@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hospital_app/common/GlobalConfig.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:hospital_app/pages/home/PaymentBtnsPage.dart';
+import 'package:hospital_app/pages/home/RegisterBtnsPage.dart';
+import 'package:hospital_app/pages/home/ReportBtnsPage.dart';
+import 'package:hospital_app/pages/home/TreatmentBtnsPage.dart';
 
 class HomePage extends StatefulWidget {
   String dataDay;
@@ -17,6 +21,7 @@ class HomePageState extends State<HomePage> {
       color: GlobalConfig.backgroundColor,
       child: new Scaffold(
         appBar: new AppBar(
+          backgroundColor: GlobalConfig.topBarColor,
           leading: new IconButton(
             icon: new Icon(Icons.list),
             onPressed: _listIconPressed,
@@ -73,7 +78,10 @@ class HomePageState extends State<HomePage> {
                               child: Image.asset(
                                   "static/images/btn_home_green.png"),
                               padding: const EdgeInsets.all(0),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => RegisterBtnsPage()));
+                              },
                             ),
                           ),
                           new Container(
@@ -85,7 +93,10 @@ class HomePageState extends State<HomePage> {
                               child: Image.asset(
                                   "static/images/btn_home_blue.png"),
                               padding: const EdgeInsets.all(0),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => PaymentBtnsPage()));
+                              },
                             ),
                           ),
                         ],
@@ -105,7 +116,10 @@ class HomePageState extends State<HomePage> {
                               child: Image.asset(
                                   "static/images/btn_home_yellow.png"),
                               padding: const EdgeInsets.all(0),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => TreatmentBtnsPage()));
+                              },
                             ),
                           ),
                           new Container(
@@ -117,7 +131,10 @@ class HomePageState extends State<HomePage> {
                               child: Image.asset(
                                   "static/images/btn_home_pink.png"),
                               padding: const EdgeInsets.all(0),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => ReportBtnsPage()));
+                              },
                             ),
                           ),
                         ],

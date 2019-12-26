@@ -70,7 +70,8 @@ class AppPageState extends State<AppPage> {
         bottomNavigationBar: new BottomNavigationBar(
             items: _bottomTabs,
             currentIndex: page,
-            fixedColor: GlobalConfig.colorPrimary,
+            backgroundColor: GlobalConfig.bottomBarColor,
+            fixedColor: Colors.white,
             type: BottomNavigationBarType.fixed,
             onTap: onTap),
       ),
@@ -78,8 +79,9 @@ class AppPageState extends State<AppPage> {
   }
 
   void onTap(int index) {
-    pageController.animateToPage(index,
-        duration: const Duration(milliseconds: 300), curve: Curves.ease);
+    // pageController.animateToPage(index,
+    //     duration: const Duration(milliseconds: 300), curve: Curves.ease);
+    pageController.jumpToPage(index);
   }
 
   void onPageChanged(int page) {

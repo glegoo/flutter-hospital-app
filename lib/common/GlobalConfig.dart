@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 class GlobalConfig {
   ///颜色值
-  static Color colorPrimary = Colors.red;
+  static Color colorPrimary = Colors.green;
+  static Color topBarColor = new Color(0xff81bb28);
+  static Color bottomBarColor = new Color(0xff3c943d);
   static Color searchBackgroundColor = new Color(0xFFEBEBEB);
   static Color cardBackgroundColor = Colors.white;
   static Color fontColor = Colors.black54;
