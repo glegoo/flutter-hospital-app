@@ -9,6 +9,7 @@ class DialogUtils {
     String title,
     String msg, {
     String button = '我知道了',
+    Function callback,
   }) {
     showDialog<Null>(
         context: context, //BuildContext对象
@@ -22,6 +23,7 @@ class DialogUtils {
                 child: Text(button),
                 onPressed: () {
                   Navigator.of(context).pop();
+                  if (callback != null) callback();
                 },
               )
             ],

@@ -90,9 +90,15 @@ class PaymentDetailPageState extends State<PaymentDetailPage> {
   }
 
   void _paySuccess() {
-    DialogUtils.show(context, '已完成缴费', '您已完成全部诊疗缴费，祝您健康!');
-    setState(() {
-      _paid = true;
-    });
+    DialogUtils.show(
+      context,
+      '已完成缴费',
+      '您已完成全部诊疗缴费，祝您健康!',
+      callback: () {
+        setState(() {
+          _paid = true;
+        });
+      },
+    );
   }
 }
