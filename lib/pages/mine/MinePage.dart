@@ -43,7 +43,7 @@ class MinePageState extends State<MinePage> {
           ),
         ),
         _button('收藏的医生', Icons.local_hospital, 1, () {}),
-        _button('家庭成员', Icons.person_add, 2, () {
+        _button('家庭成员', Icons.group_add, 2, () {
           Navigator.of(context).push(
               MaterialPageRoute(builder: (context) => FamilyMemberPage()));
         }),
