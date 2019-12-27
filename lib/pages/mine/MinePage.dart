@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hospital_app/common/GlobalConfig.dart';
 import 'package:hospital_app/common/TestData.dart';
+import 'package:hospital_app/pages/mine/AboutPage.dart';
 import 'package:hospital_app/pages/mine/FamilyMemberPage.dart';
 import 'package:hospital_app/pages/mine/SettingPage.dart';
 import 'package:hospital_app/utils/ScreenUtils.dart';
@@ -42,23 +43,18 @@ class MinePageState extends State<MinePage> {
             ],
           ),
         ),
-        _button('收藏的医生', Icons.local_hospital, 1, () {}),
-        _button('家庭成员', Icons.group_add, 2, () {
-          Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => FamilyMemberPage()));
-        }),
-        _button('绑定就诊卡', Icons.credit_card, 0, () {}),
-        _button('订阅', Icons.book, 0, () {}),
-        _button('常见问题', Icons.help, 0, () {}),
-        _button('关于我们', Icons.info, 0, () {}),
-        _button('设置', Icons.settings, 0, () {
-          Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => SettingPage()));}),
+        _button('收藏的医生', Icons.local_hospital, 1, AboutPage()),
+        _button('家庭成员', Icons.group_add, 2, FamilyMemberPage()),
+        _button('绑定就诊卡', Icons.credit_card, 0, AboutPage()),
+        _button('订阅', Icons.book, 0, AboutPage()),
+        _button('常见问题', Icons.help, 0, AboutPage()),
+        _button('关于我们', Icons.info, 0, AboutPage()),
+        _button('设置', Icons.settings, 0, SettingPage()),
       ],
     );
   }
 
-  Widget _button(String title, IconData icon, int count, Function pressed) {
+  Widget _button(String title, IconData icon, int count, Widget page) {
     return Container(
       padding: EdgeInsets.only(top: 10),
       child: FlatButton(
@@ -71,7 +67,10 @@ class MinePageState extends State<MinePage> {
             ),
             Expanded(
               flex: 6,
-              child: Text(title,style: TextStyle(fontSize: 15),),
+              child: Text(
+                title,
+                style: TextStyle(fontSize: 15),
+              ),
             ),
             Spacer(
               flex: 6,
@@ -102,7 +101,10 @@ class MinePageState extends State<MinePage> {
             ),
           ],
         ),
-        onPressed: pressed,
+        onPressed: () {
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => page));
+        },
       ),
     );
   }

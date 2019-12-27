@@ -5,6 +5,7 @@ import 'package:hospital_app/pages/home/PaymentBtnsPage.dart';
 import 'package:hospital_app/pages/home/RegisterBtnsPage.dart';
 import 'package:hospital_app/pages/home/ReportBtnsPage.dart';
 import 'package:hospital_app/pages/home/TreatmentBtnsPage.dart';
+import 'package:hospital_app/pages/mine/AboutPage.dart';
 
 class HomePage extends StatefulWidget {
   String dataDay;
@@ -22,10 +23,10 @@ class HomePageState extends State<HomePage> {
       child: new Scaffold(
         appBar: new AppBar(
           backgroundColor: GlobalConfig.topBarColor,
-          leading: new IconButton(
-            icon: new Icon(Icons.list),
-            onPressed: _listIconPressed,
-          ),
+          // leading: new IconButton(
+          //   icon: new Icon(Icons.info),
+          //   onPressed: _listIconPressed,
+          // ),
           title: new Text(GlobalConfig.appName),
           actions: <Widget>[
             new IconButton(
@@ -224,7 +225,10 @@ class HomePageState extends State<HomePage> {
     );
   }
 
-  void _listIconPressed() {}
+  void _listIconPressed() {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => AboutPage()));
+  }
 
   void _cameraIconPressed() {}
 }
