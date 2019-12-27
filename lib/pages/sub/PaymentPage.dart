@@ -2,7 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:hospital_app/common/GlobalConfig.dart';
 import 'package:hospital_app/common/TestData.dart';
-import 'package:hospital_app/pages/sub/ReportDetailPage.dart';
+import 'package:hospital_app/pages/sub/PaymentDetailPage.dart';
 import 'package:hospital_app/utils/PageRouteUtils.dart';
 import 'package:hospital_app/utils/TimeUtils.dart';
 
@@ -118,6 +118,10 @@ class PaymentPageState extends State<PaymentPage> {
   }
 
   void _openReport(BuildContext context, int index) {
-    routePage(context, ReportDetailPage());
+    routePage(
+        context,
+        PaymentDetailPage(
+          paid: false,
+        ));
   }
 }

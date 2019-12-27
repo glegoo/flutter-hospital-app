@@ -94,4 +94,14 @@ class TestData {
 点击【我的】＞【绑定就诊卡】＞选择就诊人＞填写发票左上角的病历号（需要新的病历号）＞点击【更新】
 
 2. 请确保姓名，手机号以及身份证号填写正确并且与医院预留信息一致。''';
+  static String orderId = 'NO321226633';
+  static String orderOffice = '耳鼻喉科';
+  static double orderFee = 133.06;
+  static String orderDetail = '''缴费项目明细：
+
+1.  挂号费： 12元
+2.  清热解毒软胶囊 1盒  33.06元
+3. 甲帕依固龈液 2瓶  88元
+
+''';
 }
