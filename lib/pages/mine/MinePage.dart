@@ -3,6 +3,7 @@ import 'package:hospital_app/common/GlobalConfig.dart';
 import 'package:hospital_app/common/TestData.dart';
 import 'package:hospital_app/pages/mine/AboutPage.dart';
 import 'package:hospital_app/pages/mine/FamilyMemberPage.dart';
+import 'package:hospital_app/pages/mine/QuestionPage.dart';
 import 'package:hospital_app/pages/mine/SettingPage.dart';
 import 'package:hospital_app/utils/ScreenUtils.dart';
 
@@ -47,7 +48,7 @@ class MinePageState extends State<MinePage> {
         _button('家庭成员', Icons.group_add, 2, FamilyMemberPage()),
         _button('绑定就诊卡', Icons.credit_card, 0, AboutPage()),
         _button('订阅', Icons.book, 0, AboutPage()),
-        _button('常见问题', Icons.help, 0, AboutPage()),
+        _button('常见问题', Icons.help, 0, QuestionPage()),
         _button('关于我们', Icons.info, 0, AboutPage()),
         _button('设置', Icons.settings, 0, SettingPage()),
       ],
