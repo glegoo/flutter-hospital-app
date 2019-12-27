@@ -66,22 +66,22 @@ class MinePageState extends State<MinePage> {
           direction: Axis.horizontal,
           children: <Widget>[
             Expanded(
-              flex: 2,
+              flex: 3,
               child: Icon(icon),
             ),
             Expanded(
-              flex: 3,
-              child: Text(title),
+              flex: 6,
+              child: Text(title,style: TextStyle(fontSize: 15),),
             ),
             Spacer(
-              flex: 3,
+              flex: 6,
             ),
             count == 0
                 ? Spacer(
-                    flex: 2,
+                    flex: 4,
                   )
                 : Expanded(
-                    flex: 2,
+                    flex: 4,
                     child: Container(
                       height: 20,
                       child: Align(
@@ -98,7 +98,7 @@ class MinePageState extends State<MinePage> {
                     ),
                   ),
             Spacer(
-              flex: 1,
+              flex: 2,
             ),
           ],
         ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hospital_app/common/GlobalConfig.dart';
-import 'package:hospital_app/common/TestData.dart';
 import 'package:hospital_app/utils/ScreenUtils.dart';
 
 class SettingPage extends StatefulWidget {
