@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hospital_app/common/GlobalConfig.dart';
+import 'package:hospital_app/utils/PageRouteUtils.dart';
 import 'package:hospital_app/widget/SubAppBtn.dart';
 
 class RegisterBtnsPage extends StatefulWidget {
@@ -11,7 +12,8 @@ class RegisterBtnsPageState extends State<RegisterBtnsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: GlobalConfig.topBarColor,),
+        backgroundColor: GlobalConfig.topBarColor,
+      ),
       body: new Container(
         color: GlobalConfig.cardBackgroundColor,
         margin: const EdgeInsets.only(top: 6.0, bottom: 6.0),
@@ -26,25 +28,33 @@ class RegisterBtnsPageState extends State<RegisterBtnsPage> {
                     title: '预约挂号',
                     iconName: 'yygh',
                     backgroundColor: new Color(0xff00e19f),
-                    routeView: Container(),
+                    buttonClick: () {
+                      routePage(context, Container());
+                    },
                   ),
                   SubAppBtn(
                     title: '当日挂号',
                     iconName: 'drgh',
                     backgroundColor: new Color(0xfff8ae00),
-                    routeView: Container(),
+                    buttonClick: () {
+                      routePage(context, Container());
+                    },
                   ),
                   SubAppBtn(
                     title: '医生介绍',
                     iconName: 'ysjs',
                     backgroundColor: new Color(0xff4cc4f9),
-                    routeView: Container(),
+                    buttonClick: () {
+                      routePage(context, Container());
+                    },
                   ),
                   SubAppBtn(
                     title: '体检预约',
                     iconName: 'tjyy',
                     backgroundColor: new Color(0xffe289d9),
-                    routeView: Container(),
+                    buttonClick: () {
+                      routePage(context, Container());
+                    },
                   ),
                 ],
               ),
@@ -58,25 +68,33 @@ class RegisterBtnsPageState extends State<RegisterBtnsPage> {
                     title: '体检购物车',
                     iconName: 'tjgwc',
                     backgroundColor: new Color(0xff3597fa),
-                    routeView: Container(),
+                    buttonClick: () {
+                      routePage(context, Container());
+                    },
                   ),
                   SubAppBtn(
                     title: '体检简介',
                     iconName: 'tjjj',
                     backgroundColor: new Color(0xffe289d9),
-                    routeView: Container(),
+                    buttonClick: () {
+                      routePage(context, Container());
+                    },
                   ),
                   SubAppBtn(
                     title: '医院介绍',
                     iconName: 'yyjs',
                     backgroundColor: new Color(0xff05e4ad),
-                    routeView: Container(),
+                    buttonClick: () {
+                      routePage(context, Container());
+                    },
                   ),
                   SubAppBtn(
                     title: '就医指南',
                     iconName: 'jyzn',
                     backgroundColor: new Color(0xfff8ad69),
-                    routeView: Container(),
+                    buttonClick: () {
+                      routePage(context, Container());
+                    },
                   ),
                 ],
               ),
@@ -90,25 +108,33 @@ class RegisterBtnsPageState extends State<RegisterBtnsPage> {
                     title: '医院导航',
                     iconName: 'yydh',
                     backgroundColor: new Color(0xfff8ae00),
-                    routeView: Container(),
+                    buttonClick: () {
+                      routePage(context, Container());
+                    },
                   ),
                   SubAppBtn(
                     title: '智能导诊',
                     iconName: 'zndz',
                     backgroundColor: new Color(0xff4cc4f9),
-                    routeView: Container(),
+                    buttonClick: () {
+                      routePage(context, Container());
+                    },
                   ),
                   SubAppBtn(
                     title: '患者评价',
                     iconName: 'hzpj',
                     backgroundColor: new Color(0xfff8ad69),
-                    routeView: Container(),
+                    buttonClick: () {
+                      routePage(context, Container());
+                    },
                   ),
                   SubAppBtn(
                     title: '体检订单',
                     iconName: 'tjdd',
                     backgroundColor: new Color(0xff05e4ad),
-                    routeView: Container(),
+                    buttonClick: () {
+                      routePage(context, Container());
+                    },
                   ),
                 ],
               ),

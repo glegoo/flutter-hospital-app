@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hospital_app/common/GlobalConfig.dart';
 import 'package:hospital_app/common/TestData.dart';
 import 'package:hospital_app/pages/mine/AddCardPage.dart';
+import 'package:hospital_app/utils/DialogUtils.dart';
 
 class ManageCardPage extends StatefulWidget {
   ManageCardPageState createState() => new ManageCardPageState();
@@ -22,22 +23,7 @@ class ManageCardPageState extends State<ManageCardPage> {
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => AddCardPage(name: TestData.userName)));
-              showDialog<Null>(
-                  context: context,
-                  builder: (context) {
-                    return AlertDialog(
-                      title: Text('绑卡说明'),
-                      content: Text(TestData.bingCardTip),
-                      actions: <Widget>[
-                        FlatButton(
-                          child: Text('我知道了'),
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                          },
-                        )
-                      ],
-                    );
-                  });
+              DialogUtils.show(context, '绑卡说明', TestData.bingCardTip);
             },
             padding: EdgeInsets.fromLTRB(20, 20, 0, 20),
             child: Row(

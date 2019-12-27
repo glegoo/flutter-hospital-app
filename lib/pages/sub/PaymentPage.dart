@@ -2,13 +2,15 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:hospital_app/common/GlobalConfig.dart';
 import 'package:hospital_app/common/TestData.dart';
+import 'package:hospital_app/pages/sub/ReportDetailPage.dart';
+import 'package:hospital_app/utils/PageRouteUtils.dart';
 import 'package:hospital_app/utils/TimeUtils.dart';
 
-class RegisterPage extends StatefulWidget {
-  RegisterPageState createState() => new RegisterPageState();
+class PaymentPage extends StatefulWidget {
+  PaymentPageState createState() => new PaymentPageState();
 }
 
-class RegisterPageState extends State<RegisterPage> {
+class PaymentPageState extends State<PaymentPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,12 +42,12 @@ class RegisterPageState extends State<RegisterPage> {
         ),
       ),
       body: ListView.separated(
-        itemCount: TestData.registerInfos.length,
+        itemCount: TestData.paymentInfos.length,
         itemBuilder: (BuildContext context, int index) {
           return Container(
             // width: Screen.width - 40,
             padding: EdgeInsets.fromLTRB(30, 10, 30, 10),
-            child: _buildRegisterRow(context, index),
+            child: _buildReportRow(context, index),
           );
         },
         separatorBuilder: (BuildContext context, int index) {
@@ -59,8 +61,9 @@ class RegisterPageState extends State<RegisterPage> {
     );
   }
 
-  Widget _buildRegisterRow(BuildContext context, int index) {
-    switch (TestData.registerInfos[index]['type']) {
+  Widget _buildReportRow(BuildContext context, int index) {
+    Map info = TestData.paymentInfos[index];
+    switch (info['type']) {
       case 'unuse':
         return Container(
           child: RichText(
@@ -69,8 +72,7 @@ class RegisterPageState extends State<RegisterPage> {
                 TextSpan(
                   text: GlobalConfig.appName +
                       '【' +
-                      chineseDateTimeFormat(
-                          TestData.registerInfos[index]['time']) +
+                      chineseDateTimeFormat(info['time']) +
                       '】\n',
                   style: TextStyle(color: Colors.black),
                 ),
@@ -79,7 +81,19 @@ class RegisterPageState extends State<RegisterPage> {
                   style: TextStyle(color: GlobalConfig.topBarColor),
                 ),
                 TextSpan(
-                  text: TestData.registerInfos[index]['text'],
+                  text: ' 有${info['count']}份订单，',
+                  style: TextStyle(color: Colors.black),
+                ),
+                TextSpan(
+                  text: '点击',
+                  style: TextStyle(color: GlobalConfig.topBarColor),
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () {
+                      _openReport(context, 1);
+                    },
+                ),
+                TextSpan(
+                  text: '查看详情。',
                   style: TextStyle(color: Colors.black),
                 ),
               ],
@@ -89,18 +103,21 @@ class RegisterPageState extends State<RegisterPage> {
       case 'used':
         return Container(
             child: Text(
-          '过往挂号：' +
-              chineseDateTimeFormat(TestData.registerInfos[index]['time']) +
+          '过往订单：' +
+              chineseDateTimeFormat(info['time']) +
               '\n' +
-              TestData.userName +
-              TestData.registerInfos[index]['text'],
+              '${TestData.userName} 有${info['count']}份缴费订单',
           style: TextStyle(color: Colors.grey[500]),
         ));
       default:
         return Text(
-          chineseDateFormat(TestData.registerInfos[index]['time']) + '已挂号',
+          chineseDateFormat(info['time']),
           style: TextStyle(color: GlobalConfig.topBarColor),
         );
     }
+  }
+
+  void _openReport(BuildContext context, int index) {
+    routePage(context, ReportDetailPage());
   }
 }

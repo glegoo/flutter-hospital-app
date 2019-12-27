@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hospital_app/common/GlobalConfig.dart';
+import 'package:hospital_app/pages/sub/PaymentPage.dart';
+import 'package:hospital_app/utils/PageRouteUtils.dart';
 import 'package:hospital_app/widget/SubAppBtn.dart';
 
 class PaymentBtnsPage extends StatefulWidget {
@@ -27,25 +29,33 @@ class PaymentBtnsPageState extends State<PaymentBtnsPage> {
                     title: '缴费',
                     iconName: 'jf',
                     backgroundColor: new Color(0xff00e19f),
-                    routeView: Container(),
+                    buttonClick: () {
+                      routePage(context, PaymentPage());
+                    },
                   ),
                   SubAppBtn(
                     title: '停车缴费',
                     iconName: 'tcjf',
                     backgroundColor: new Color(0xfff8ae00),
-                    routeView: Container(),
+                    buttonClick: () {
+                      routePage(context, Container());
+                    },
                   ),
                   SubAppBtn(
                     title: '体检订单',
                     iconName: 'tjdd',
                     backgroundColor: new Color(0xff4cc4f9),
-                    routeView: Container(),
+                    buttonClick: () {
+                      routePage(context, Container());
+                    },
                   ),
                   SubAppBtn(
                     title: '缴费记录',
                     iconName: 'jfjl',
                     backgroundColor: new Color(0xffe289d9),
-                    routeView: Container(),
+                    buttonClick: () {
+                      routePage(context, Container());
+                    },
                   ),
                 ],
               ),

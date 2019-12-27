@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hospital_app/common/GlobalConfig.dart';
+import 'package:hospital_app/common/TestData.dart';
+import 'package:hospital_app/pages/sub/ReportPage.dart';
+import 'package:hospital_app/utils/DialogUtils.dart';
+import 'package:hospital_app/utils/PageRouteUtils.dart';
 import 'package:hospital_app/widget/SubAppBtn.dart';
 
 class ReportBtnsPage extends StatefulWidget {
@@ -11,7 +15,8 @@ class ReportBtnsPageState extends State<ReportBtnsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: GlobalConfig.topBarColor,),
+        backgroundColor: GlobalConfig.topBarColor,
+      ),
       body: new Container(
         color: GlobalConfig.cardBackgroundColor,
         margin: const EdgeInsets.only(top: 6.0, bottom: 6.0),
@@ -26,25 +31,36 @@ class ReportBtnsPageState extends State<ReportBtnsPage> {
                     title: '化验报告',
                     iconName: 'hybg',
                     backgroundColor: new Color(0xff00e19f),
-                    routeView: Container(),
+                    buttonClick: () {
+                      routePage(context, ReportPage());
+                      DialogUtils.show(context, '温馨提示', TestData.reportTip);
+                    },
                   ),
                   SubAppBtn(
                     title: '体检报告',
                     iconName: 'tjbg',
                     backgroundColor: new Color(0xfff8ae00),
-                    routeView: Container(),
+                    buttonClick: () {
+                      routePage(context, ReportPage());
+                      DialogUtils.show(context, '温馨提示', TestData.reportTip);
+                    },
                   ),
                   SubAppBtn(
                     title: '影像报告',
                     iconName: 'yxbg',
                     backgroundColor: new Color(0xff4cc4f9),
-                    routeView: Container(),
+                    buttonClick: () {
+                      routePage(context, ReportPage());
+                      DialogUtils.show(context, '温馨提示', TestData.reportTip);
+                    },
                   ),
                   SubAppBtn(
                     title: '就医指南',
                     iconName: 'jyzn',
                     backgroundColor: new Color(0xffe289d9),
-                    routeView: Container(),
+                    buttonClick: () {
+                      routePage(context, Container());
+                    },
                   ),
                 ],
               ),
@@ -58,7 +74,9 @@ class ReportBtnsPageState extends State<ReportBtnsPage> {
                     title: '智能导诊',
                     iconName: 'zndz',
                     backgroundColor: new Color(0xff3597fa),
-                    routeView: Container(),
+                    buttonClick: () {
+                      routePage(context, Container());
+                    },
                   ),
                 ],
               ),

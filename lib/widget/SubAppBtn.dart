@@ -4,14 +4,14 @@ class SubAppBtn extends StatelessWidget {
   final String title;
   final String iconName;
   final Color backgroundColor;
-  final Widget routeView;
+  final Function buttonClick;
 
   const SubAppBtn(
       {Key key,
       this.title,
       this.iconName,
       this.backgroundColor,
-      this.routeView})
+      this.buttonClick})
       : super(key: key);
 
   @override
@@ -45,8 +45,7 @@ class SubAppBtn extends StatelessWidget {
           ),
         ),
         onPressed: () {
-          // Navigator.of(context)
-          //     .push(MaterialPageRoute(builder: (context) => this.routeView));
+          buttonClick();
         },
       ),
     );
