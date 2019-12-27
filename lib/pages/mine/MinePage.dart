@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hospital_app/common/GlobalConfig.dart';
 import 'package:hospital_app/common/TestData.dart';
 import 'package:hospital_app/pages/mine/FamilyMemberPage.dart';
+import 'package:hospital_app/pages/mine/SettingPage.dart';
 import 'package:hospital_app/utils/ScreenUtils.dart';
 
 class MinePage extends StatefulWidget {
@@ -50,7 +51,9 @@ class MinePageState extends State<MinePage> {
         _button('订阅', Icons.book, 0, () {}),
         _button('常见问题', Icons.help, 0, () {}),
         _button('关于我们', Icons.info, 0, () {}),
-        _button('设置', Icons.settings, 0, () {}),
+        _button('设置', Icons.settings, 0, () {
+          Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => SettingPage()));}),
       ],
     );
   }
@@ -67,7 +70,7 @@ class MinePageState extends State<MinePage> {
               child: Icon(icon),
             ),
             Expanded(
-              flex: 2,
+              flex: 3,
               child: Text(title),
             ),
             Spacer(
