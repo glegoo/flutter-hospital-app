@@ -12,9 +12,13 @@ class TestData {
     },
   ];
 
-  static var userName = '吴自有';
+  static String userName = '吴自有';
+  static int userAge = 37;
+  static int userSex = 1;
   static var familyName = '邓美妹';
   static var userPhone = 13011234567;
+  static String userID = '210309********1113';
+  static String userHospitalId = 'NO3.141592653589';
   static var registerInfos = [
     {
       'type': 'time',
@@ -34,4 +38,11 @@ class TestData {
   static String version = 'v1.05';
   static String aboutText =
       '      沈阳市第零人民医院即沈阳未命名医院，始建于1977年，是沈阳城区东部区域性医疗服务中心。是以神经科为龙头、多科系协调发展的大型三级综合医院，神经内科是市临床重点专科和市特色专科。作为沈阳市属医院中唯一一家国家级脑卒中筛查与防治基地。  医院建筑面积达10万余平方米，编制床位1150张。';
+  static String bingCardTip = '''1. 本过程是确定您通过哪一种方式进行就诊。
+
+2. 选择身份证时，直接带身份证就诊即可。
+
+3. 选择就医卡时，需要添加病历号和手机号。病历号为发票上以M开头共10位的字母数字组合；手机号位办卡时在窗口或者自助机上留存的手机号码。挂号成功后，携带该就医卡就诊即可。
+
+4. 如果您忘记携带挂号时使用的就医卡，建议到门诊自助机进行预约补卡或咨询人工窗口。''';
 }
