@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hospital_app/common/GlobalConfig.dart';
 import 'package:hospital_app/pages/sub/DoctorPage.dart';
 import 'package:hospital_app/pages/sub/GuidePage.dart';
+import 'package:hospital_app/pages/sub/RegisterOfficePage.dart';
 import 'package:hospital_app/pages/sub/TextNaviPage.dart';
 import 'package:hospital_app/utils/PageRouteUtils.dart';
 import 'package:hospital_app/widget/SubAppBtn.dart';
@@ -32,7 +33,7 @@ class RegisterBtnsPageState extends State<RegisterBtnsPage> {
                     iconName: 'yygh',
                     backgroundColor: new Color(0xff00e19f),
                     buttonClick: () {
-                      routePage(context, Container());
+                      routePage(context, RegisterOfficePage());
                     },
                   ),
                   SubAppBtn(
