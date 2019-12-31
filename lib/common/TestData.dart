@@ -180,4 +180,40 @@ class TestData {
 3. 甲帕依固龈液 2瓶  88元
 
 ''';
+  static List<String> textNaviMenu = ['一号楼A座', '一号楼B座', '二号楼', '三号楼'];
+  static var textNaviDetail = [
+    {
+      'floor': 'B1F',
+      'text':
+          '磁共振(MR Room) CT室(CT Room) DR室(DR Room) ECT室(ECTRoom)放射科取片处 (Taking Report Room of Radiology)介入室 (Interventional Room) PET--CT室(PET-CT Room)',
+    },
+    {
+      'floor': '01F',
+      'text':
+          '神经功能科(Nerve Function Department)门诊收费处(Outpatient Cashier)门诊药房 (Outpatient Pharmacy)总服务台(Service Center)消防监控中心(Fire Control Center)'
+    },
+    {
+      'floor': '02F',
+      'text':
+          '儿内科门诊(Pediatric Clinic)小儿外科门诊 (Pediatric Surgery Clinic)发育儿科 (Developing Pediatric Clinic)儿科药房 (Pediatric Pharmacy)',
+    },
+    {
+      'floor': '03F',
+      'text':
+          '儿科特需门诊(Pediatric VIP Clinic)神经内科门诊(Neurology Clinic)全科门诊 General Clinic)临床营养科门诊(Clinical Nutrition Clinic)遗传门诊(Genetic Clinic)睡眠医学门诊(Sleep Medical Clinic)康复科门诊 (Rehabilitation Clinic)心功能科(Cardiac Function)肺功能检查室(Pulmonary Function Room)',
+    },
+    {
+      'floor': '04F',
+      'text': '超声科(Ultrasound Department)采血中心 (Blood-drawing Center)',
+    },
+    {
+      'floor': '05F',
+      'text':
+          '内科门诊(丨nternal Medicine Clinic)中医科门诊(Traditional Chinese Medicine Clinic)耳鼻咽喉科门诊(E.N.T Clinic)老年病门诊 (Gerontology Clinic)',
+    },
+    {
+      'floor': '06F',
+      'text': '眼科门诊(Ophtalmology Clinic) 口腔科门诊(Stomatology Clinic)',
+    }
+  ];
 }

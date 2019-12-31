@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hospital_app/common/GlobalConfig.dart';
 import 'package:hospital_app/pages/sub/DoctorPage.dart';
+import 'package:hospital_app/pages/sub/TextNaviPage.dart';
 import 'package:hospital_app/utils/PageRouteUtils.dart';
 import 'package:hospital_app/widget/SubAppBtn.dart';
 
@@ -110,7 +111,7 @@ class RegisterBtnsPageState extends State<RegisterBtnsPage> {
                     iconName: 'yydh',
                     backgroundColor: new Color(0xfff8ae00),
                     buttonClick: () {
-                      routePage(context, Container());
+                      routePage(context, TextNaviPage());
                     },
                   ),
                   SubAppBtn(
