@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hospital_app/common/GlobalConfig.dart';
+import 'package:hospital_app/common/TestData.dart';
+import 'package:hospital_app/pages/sub/ParkingPage.dart';
 import 'package:hospital_app/pages/sub/PaymentPage.dart';
+import 'package:hospital_app/utils/DialogUtils.dart';
 import 'package:hospital_app/utils/PageRouteUtils.dart';
 import 'package:hospital_app/widget/SubAppBtn.dart';
 
@@ -38,7 +41,8 @@ class PaymentBtnsPageState extends State<PaymentBtnsPage> {
                     iconName: 'tcjf',
                     backgroundColor: new Color(0xfff8ae00),
                     buttonClick: () {
-                      routePage(context, Container());
+                      routePage(context, ParkingPage());
+                      DialogUtils.show(context, '停车缴费规则', TestData.parkingTip);
                     },
                   ),
                   SubAppBtn(
