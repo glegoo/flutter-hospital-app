@@ -21,17 +21,33 @@ class DoctorPageState extends State<DoctorPage> {
     return Scaffold(
       appBar: AppBar(
         actions: <Widget>[
-          SizedBox(
+          Container(
+            width: Screen.width - 80,
+            padding: EdgeInsets.fromLTRB(0, 10, 50, 10),
             child: TextField(
+              onSubmitted: (value) {
+                setState(() {
+                  if (value?.isEmpty ?? true) {
+                    _doctors = TestData.doctors;
+                  } else {
+                    _doctors = _doctors
+                        .where((d) => d['name'].toString().contains(value))
+                        .toList();
+                  }
+                });
+              },
+              textInputAction: TextInputAction.search,
               decoration: InputDecoration(
-                icon: Icon(Icons.search),
-                contentPadding: EdgeInsets.all(10),
                 fillColor: Colors.white,
+                filled: true,
+                suffixIcon: Icon(Icons.search),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
               ),
             ),
           ),
         ],
-        // title:
         backgroundColor: GlobalConfig.topBarColor,
       ),
       body: ListView.separated(
