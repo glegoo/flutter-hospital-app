@@ -40,9 +40,7 @@ class RegisterBtnsPageState extends State<RegisterBtnsPage> {
                     title: '当日挂号',
                     iconName: 'drgh',
                     backgroundColor: new Color(0xfff8ae00),
-                    buttonClick: () {
-                      routePage(context, Container());
-                    },
+                    buttonClick: null,
                   ),
                   SubAppBtn(
                     title: '医生介绍',
@@ -56,9 +54,7 @@ class RegisterBtnsPageState extends State<RegisterBtnsPage> {
                     title: '体检预约',
                     iconName: 'tjyy',
                     backgroundColor: new Color(0xffe289d9),
-                    buttonClick: () {
-                      routePage(context, Container());
-                    },
+                    buttonClick: null,
                   ),
                 ],
               ),
@@ -72,25 +68,19 @@ class RegisterBtnsPageState extends State<RegisterBtnsPage> {
                     title: '体检购物车',
                     iconName: 'tjgwc',
                     backgroundColor: new Color(0xff3597fa),
-                    buttonClick: () {
-                      routePage(context, Container());
-                    },
+                    buttonClick: null,
                   ),
                   SubAppBtn(
                     title: '体检简介',
                     iconName: 'tjjj',
                     backgroundColor: new Color(0xffe289d9),
-                    buttonClick: () {
-                      routePage(context, Container());
-                    },
+                    buttonClick: null,
                   ),
                   SubAppBtn(
                     title: '医院介绍',
                     iconName: 'yyjs',
                     backgroundColor: new Color(0xff05e4ad),
-                    buttonClick: () {
-                      routePage(context, Container());
-                    },
+                    buttonClick: null,
                   ),
                   SubAppBtn(
                     title: '就医指南',
@@ -120,25 +110,19 @@ class RegisterBtnsPageState extends State<RegisterBtnsPage> {
                     title: '智能导诊',
                     iconName: 'zndz',
                     backgroundColor: new Color(0xff4cc4f9),
-                    buttonClick: () {
-                      routePage(context, Container());
-                    },
+                    buttonClick: null,
                   ),
                   SubAppBtn(
                     title: '患者评价',
                     iconName: 'hzpj',
                     backgroundColor: new Color(0xfff8ad69),
-                    buttonClick: () {
-                      routePage(context, Container());
-                    },
+                    buttonClick: null,
                   ),
                   SubAppBtn(
                     title: '体检订单',
                     iconName: 'tjdd',
                     backgroundColor: new Color(0xff05e4ad),
-                    buttonClick: () {
-                      routePage(context, Container());
-                    },
+                    buttonClick: null,
                   ),
                 ],
               ),

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hospital_app/common/GlobalConfig.dart';
+import 'package:hospital_app/pages/mine/AboutPage.dart';
 import 'package:hospital_app/pages/sub/DoctorPage.dart';
+import 'package:hospital_app/pages/sub/GuidePage.dart';
+import 'package:hospital_app/pages/sub/RecipePage.dart';
 import 'package:hospital_app/utils/PageRouteUtils.dart';
 import 'package:hospital_app/widget/SubAppBtn.dart';
 
@@ -30,7 +33,7 @@ class TreatmentBtnsPageState extends State<TreatmentBtnsPage> {
                     iconName: 'yyjs',
                     backgroundColor: new Color(0xff00e19f),
                     buttonClick: () {
-                      routePage(context, Container());
+                      routePage(context, AboutPage());
                     },
                   ),
                   SubAppBtn(
@@ -45,16 +48,14 @@ class TreatmentBtnsPageState extends State<TreatmentBtnsPage> {
                     title: '体检简介',
                     iconName: 'tjjj',
                     backgroundColor: new Color(0xff4cc4f9),
-                    buttonClick: () {
-                      routePage(context, Container());
-                    },
+                    buttonClick: null,
                   ),
                   SubAppBtn(
                     title: '就医指南',
                     iconName: 'jyzn',
                     backgroundColor: new Color(0xffe289d9),
                     buttonClick: () {
-                      routePage(context, Container());
+                      routePage(context, GuidePage());
                     },
                   ),
                 ],
@@ -69,25 +70,21 @@ class TreatmentBtnsPageState extends State<TreatmentBtnsPage> {
                     title: '健康百科',
                     iconName: 'jkbk',
                     backgroundColor: new Color(0xff3597fa),
-                    buttonClick: () {
-                      routePage(context, Container());
-                    },
+                    buttonClick: null,
                   ),
                   SubAppBtn(
                     title: '用药处方',
                     iconName: 'yycf',
                     backgroundColor: new Color(0xffe289d9),
                     buttonClick: () {
-                      routePage(context, Container());
+                      routePage(context, RecipePage());
                     },
                   ),
                   SubAppBtn(
                     title: '复查计划',
                     iconName: 'fcjh',
                     backgroundColor: new Color(0xff05e4ad),
-                    buttonClick: () {
-                      routePage(context, Container());
-                    },
+                    buttonClick: null,
                   ),
                 ],
               ),

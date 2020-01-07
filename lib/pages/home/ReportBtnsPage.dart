@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hospital_app/common/GlobalConfig.dart';
 import 'package:hospital_app/common/TestData.dart';
+import 'package:hospital_app/pages/sub/GuidePage.dart';
 import 'package:hospital_app/pages/sub/ReportPage.dart';
 import 'package:hospital_app/utils/DialogUtils.dart';
 import 'package:hospital_app/utils/PageRouteUtils.dart';
@@ -59,7 +60,7 @@ class ReportBtnsPageState extends State<ReportBtnsPage> {
                     iconName: 'jyzn',
                     backgroundColor: new Color(0xffe289d9),
                     buttonClick: () {
-                      routePage(context, Container());
+                      routePage(context, GuidePage());
                     },
                   ),
                 ],
@@ -74,9 +75,7 @@ class ReportBtnsPageState extends State<ReportBtnsPage> {
                     title: '智能导诊',
                     iconName: 'zndz',
                     backgroundColor: new Color(0xff3597fa),
-                    buttonClick: () {
-                      routePage(context, Container());
-                    },
+                    buttonClick: null,
                   ),
                 ],
               ),

@@ -6,11 +6,11 @@ import 'package:hospital_app/pages/sub/ReportDetailPage.dart';
 import 'package:hospital_app/utils/PageRouteUtils.dart';
 import 'package:hospital_app/utils/TimeUtils.dart';
 
-class ReportPage extends StatefulWidget {
-  ReportPageState createState() => new ReportPageState();
+class RecipePage extends StatefulWidget {
+  RecipePageState createState() => new RecipePageState();
 }
 
-class ReportPageState extends State<ReportPage> {
+class RecipePageState extends State<RecipePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +42,7 @@ class ReportPageState extends State<ReportPage> {
         ),
       ),
       body: ListView.separated(
-        itemCount: TestData.reports.length,
+        itemCount: 2,
         itemBuilder: (BuildContext context, int index) {
           return Container(
             // width: Screen.width - 40,
@@ -81,7 +81,7 @@ class ReportPageState extends State<ReportPage> {
                   style: TextStyle(color: GlobalConfig.topBarColor),
                 ),
                 TextSpan(
-                  text: ' 有${info['count']}份${info['text']}，',
+                  text: ' 有${info['count']}份用药处方，',
                   style: TextStyle(color: Colors.black),
                 ),
                 TextSpan(
@@ -101,23 +101,28 @@ class ReportPageState extends State<ReportPage> {
           ),
         );
       case 'used':
-        return Container(
-            child: Text(
-          '过往挂号：' +
-              chineseDateTimeFormat(info['time']) +
-              '\n' +
-              '${TestData.userName} 有${info['count']}份报告',
-          style: TextStyle(color: Colors.grey[500]),
-        ));
+        // return Container(
+        //     child: Text(
+        //   '过往挂号：' +
+        //       chineseDateTimeFormat(info['time']) +
+        //       '\n' +
+        //       '${TestData.userName} 有${info['count']}份报告',
+        //   style: TextStyle(color: Colors.grey[500]),
+        // ));
+        break;
       default:
         return Text(
-          chineseDateFormat(info['time']) + '已挂号',
+          chineseDateFormat(info['time']),
           style: TextStyle(color: GlobalConfig.topBarColor),
         );
     }
   }
 
   void _openReport(BuildContext context, int index) {
-    routePage(context, ReportDetailPage(imageName: 'blood_report'));
+    routePage(
+        context,
+        ReportDetailPage(
+          imageName: 'recipe_report',
+        ));
   }
 }

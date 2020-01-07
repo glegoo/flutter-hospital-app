@@ -49,17 +49,13 @@ class PaymentBtnsPageState extends State<PaymentBtnsPage> {
                     title: '体检订单',
                     iconName: 'tjdd',
                     backgroundColor: new Color(0xff4cc4f9),
-                    buttonClick: () {
-                      routePage(context, Container());
-                    },
+                    buttonClick: null,
                   ),
                   SubAppBtn(
                     title: '缴费记录',
                     iconName: 'jfjl',
                     backgroundColor: new Color(0xffe289d9),
-                    buttonClick: () {
-                      routePage(context, Container());
-                    },
+                    buttonClick: null,
                   ),
                 ],
               ),

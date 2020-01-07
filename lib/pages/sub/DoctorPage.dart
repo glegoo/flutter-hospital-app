@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hospital_app/common/GlobalConfig.dart';
 import 'package:hospital_app/common/TestData.dart';
+import 'package:hospital_app/pages/sub/DoctorDetailPage.dart';
 import 'package:hospital_app/utils/ScreenUtils.dart';
 
 class DoctorPage extends StatefulWidget {
@@ -68,9 +69,8 @@ class DoctorPageState extends State<DoctorPage> {
     Map info = _doctors[index];
     return FlatButton(
       onPressed: () {
-        // Navigator.of(context).push(MaterialPageRoute(
-        //     builder: (context) => AddCardPage(name: TestData.userName)));
-        // DialogUtils.show(context, '绑卡说明', TestData.bingCardTip);
+        Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => DoctorDetailPage(doctorId: index)));
       },
       padding: EdgeInsets.fromLTRB(20, 20, 0, 20),
       child: Row(
