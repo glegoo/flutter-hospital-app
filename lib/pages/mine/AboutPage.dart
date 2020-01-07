@@ -32,8 +32,18 @@ class AboutPageState extends State<AboutPage> {
             ],
           ),
           Padding(
-            padding: EdgeInsets.all(30),
+            padding: EdgeInsets.all(20),
             child: Text(TestData.aboutText),
+          ),
+          Image.asset(
+            'static/images/nc_logo.png',
+            width: Screen.width / 2,
+          ),
+          Padding(
+            padding: EdgeInsets.all(20),
+            child: Text(
+              TestData.aboutNc,
+            ),
           )
         ],
       ),
