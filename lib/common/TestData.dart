@@ -256,10 +256,6 @@ class TestData {
 ''';
   static var officeList = [
     {
-      'name': '特需门诊',
-      'list': ['特需门诊']
-    },
-    {
       'name': '儿科特需',
       'list': [
         '小儿喘息及慢病门诊',
@@ -267,6 +263,10 @@ class TestData {
         '小儿内分泌生长发育门诊',
         '小儿消化内科',
       ]
+    },
+    {
+      'name': '特需门诊',
+      'list': ['特需门诊']
     },
     {
       'name': '内科',
