@@ -40,7 +40,7 @@ class SubAppBtn extends StatelessWidget {
               Text(
                 this.title,
                 style: TextStyle(
-                  fontSize: 13,
+                  fontSize: 11,
                   backgroundColor:
                       buttonClick == null ? Colors.red[200] : Color(0x00),
                 ),
