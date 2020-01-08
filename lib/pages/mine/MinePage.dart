@@ -21,10 +21,11 @@ class MinePageState extends State<MinePage> {
   @override
   Widget build(BuildContext context) {
     return new Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Container(
           width: Screen.width,
-          height: 250,
+          height: 240,
           decoration: BoxDecoration(color: GlobalConfig.topBarColor),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -46,20 +47,26 @@ class MinePageState extends State<MinePage> {
             ],
           ),
         ),
-        _button('收藏的医生', Icons.local_hospital, 1, AboutPage()),
-        _button('家庭成员', Icons.group_add, 2, FamilyMemberPage()),
-        _button('绑定就诊卡', Icons.credit_card, 0, ManageCardPage()),
-        _button('订阅', Icons.book, 0, SubscribePage()),
-        _button('常见问题', Icons.help, 0, QuestionPage()),
-        _button('关于我们', Icons.info, 0, AboutPage()),
-        _button('设置', Icons.settings, 0, SettingPage()),
+        Container(
+          child: Column(
+            // padding: EdgeInsets.only(top: 0),
+            children: <Widget>[
+              _button('收藏的医生', Icons.local_hospital, 1, null),
+              _button('家庭成员', Icons.group_add, 2, FamilyMemberPage()),
+              _button('绑定就诊卡', Icons.credit_card, 0, ManageCardPage()),
+              _button('订阅', Icons.book, 0, SubscribePage()),
+              _button('常见问题', Icons.help, 0, QuestionPage()),
+              _button('关于我们', Icons.info, 0, AboutPage()),
+              _button('设置', Icons.settings, 0, SettingPage())
+            ],
+          ),
+        ),
       ],
     );
   }
 
   Widget _button(String title, IconData icon, int count, Widget page) {
     return Container(
-      padding: EdgeInsets.only(top: 10),
       child: FlatButton(
         child: Flex(
           direction: Axis.horizontal,
@@ -105,8 +112,10 @@ class MinePageState extends State<MinePage> {
           ],
         ),
         onPressed: () {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => page));
+          if (page != null) {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => page));
+          }
         },
       ),
     );

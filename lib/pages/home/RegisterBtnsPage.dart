@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hospital_app/common/GlobalConfig.dart';
+import 'package:hospital_app/pages/mine/AboutPage.dart';
 import 'package:hospital_app/pages/sub/DoctorPage.dart';
 import 'package:hospital_app/pages/sub/GuidePage.dart';
+import 'package:hospital_app/pages/sub/MapNaviPage.dart';
 import 'package:hospital_app/pages/sub/RegisterOfficePage.dart';
 import 'package:hospital_app/pages/sub/TextNaviPage.dart';
 import 'package:hospital_app/utils/PageRouteUtils.dart';
@@ -80,7 +82,9 @@ class RegisterBtnsPageState extends State<RegisterBtnsPage> {
                     title: '医院介绍',
                     iconName: 'yyjs',
                     backgroundColor: new Color(0xff05e4ad),
-                    buttonClick: null,
+                    buttonClick: () {
+                      routePage(context, AboutPage());
+                    },
                   ),
                   SubAppBtn(
                     title: '就医指南',
@@ -123,6 +127,22 @@ class RegisterBtnsPageState extends State<RegisterBtnsPage> {
                     iconName: 'tjdd',
                     backgroundColor: new Color(0xff05e4ad),
                     buttonClick: null,
+                  ),
+                ],
+              ),
+            ),
+            new Container(
+              padding: EdgeInsets.only(top: 20),
+              child: new Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  SubAppBtn(
+                    title: '地图导航',
+                    iconName: 'dtdh',
+                    backgroundColor: new Color(0xff05e4ad),
+                    buttonClick: () {
+                      routePage(context, MapNaviPage());
+                    },
                   ),
                 ],
               ),

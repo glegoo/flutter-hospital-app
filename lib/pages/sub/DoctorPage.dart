@@ -110,7 +110,7 @@ class DoctorPageState extends State<DoctorPage> {
           ),
           Container(
             padding: EdgeInsets.only(left: 20),
-            width: 280,
+            width: Screen.width - 100,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,

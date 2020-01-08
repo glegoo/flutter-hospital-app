@@ -4,6 +4,7 @@ import 'package:hospital_app/pages/mine/AboutPage.dart';
 import 'package:hospital_app/pages/sub/DoctorPage.dart';
 import 'package:hospital_app/pages/sub/GuidePage.dart';
 import 'package:hospital_app/pages/sub/RecipePage.dart';
+import 'package:hospital_app/pages/sub/ReviewPage.dart';
 import 'package:hospital_app/utils/PageRouteUtils.dart';
 import 'package:hospital_app/widget/SubAppBtn.dart';
 
@@ -84,7 +85,9 @@ class TreatmentBtnsPageState extends State<TreatmentBtnsPage> {
                     title: '复查计划',
                     iconName: 'fcjh',
                     backgroundColor: new Color(0xff05e4ad),
-                    buttonClick: null,
+                    buttonClick: () {
+                      routePage(context, ReviewPage());
+                    },
                   ),
                 ],
               ),

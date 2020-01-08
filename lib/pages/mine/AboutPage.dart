@@ -16,8 +16,8 @@ class AboutPageState extends State<AboutPage> {
         title: Text('关于我们'),
         backgroundColor: GlobalConfig.topBarColor,
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: ListView(
+        // mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Column(
             children: <Widget>[
@@ -37,7 +37,8 @@ class AboutPageState extends State<AboutPage> {
           ),
           Image.asset(
             'static/images/nc_logo.png',
-            width: Screen.width / 2,
+            // width: Screen.width / 3,
+            height: Screen.height / 4,
           ),
           Padding(
             padding: EdgeInsets.all(20),

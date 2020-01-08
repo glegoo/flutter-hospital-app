@@ -148,7 +148,7 @@ class DoctorDetailPageState extends State<DoctorDetailPage> {
           ),
           Container(
             padding: EdgeInsets.only(left: 20),
-            width: 280,
+            width: Screen.width - 100,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -184,7 +184,7 @@ class DoctorDetailPageState extends State<DoctorDetailPage> {
 
   Widget _buildPart(IconData icon, String title, String desc) {
     return Container(
-      padding: EdgeInsets.only(left: 20),
+      padding: EdgeInsets.only(left: 20, right: 20),
       alignment: Alignment.centerLeft,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
