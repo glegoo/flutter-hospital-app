@@ -1,3 +1,4 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:hospital_app/common/GlobalConfig.dart';
 import 'package:hospital_app/pages/mine/AboutPage.dart';
@@ -140,8 +141,13 @@ class RegisterBtnsPageState extends State<RegisterBtnsPage> {
                     title: '地图导航',
                     iconName: 'dtdh',
                     backgroundColor: new Color(0xff05e4ad),
-                    buttonClick: () {
-                      routePage(context, MapNaviPage());
+                    buttonClick: () async {
+                      final cameras = await availableCameras();
+                      if (cameras.length > 0) {
+                        routePage(context, MapNaviPage(camera: cameras[0]));
+                      } else {
+                        Center(child: Text('No Cameras'));
+                      }
                     },
                   ),
                 ],
