@@ -5,6 +5,7 @@ import 'package:hospital_app/pages/mine/AboutPage.dart';
 import 'package:hospital_app/pages/sub/DoctorPage.dart';
 import 'package:hospital_app/pages/sub/GuidePage.dart';
 import 'package:hospital_app/pages/sub/MapNaviPage.dart';
+import 'package:hospital_app/pages/sub/PeGuidePage.dart';
 import 'package:hospital_app/pages/sub/RegisterOfficePage.dart';
 import 'package:hospital_app/pages/sub/TextNaviPage.dart';
 import 'package:hospital_app/utils/PageRouteUtils.dart';
@@ -77,7 +78,9 @@ class RegisterBtnsPageState extends State<RegisterBtnsPage> {
                     title: '体检简介',
                     iconName: 'tjjj',
                     backgroundColor: new Color(0xffe289d9),
-                    buttonClick: null,
+                    buttonClick: () {
+                      routePage(context, PeGuidePage());
+                    },
                   ),
                   SubAppBtn(
                     title: '医院介绍',
