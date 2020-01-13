@@ -5,6 +5,8 @@ import 'package:hospital_app/common/TestData.dart';
 import 'package:hospital_app/utils/ScreenUtils.dart';
 
 class RegisterCalendarPage extends StatefulWidget {
+  final bool showCalendar;
+  RegisterCalendarPage({Key key, this.showCalendar}) : super(key: key);
   RegisterCalendarPageState createState() => new RegisterCalendarPageState();
 }
 
@@ -55,23 +57,27 @@ class RegisterCalendarPageState extends State<RegisterCalendarPage> {
       ),
       body: Column(
         children: <Widget>[
-          Expanded(
-            flex: 1,
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: ValueListenableBuilder(
-                valueListenable: text,
-                builder: (context, value, child) {
-                  return new Text(text.value);
-                },
-              ),
-            ),
-          ),
-          Expanded(
-            flex: 4,
-            child: calendar,
-          ),
-          _showList
+          widget.showCalendar
+              ? Expanded(
+                  flex: 1,
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: ValueListenableBuilder(
+                      valueListenable: text,
+                      builder: (context, value, child) {
+                        return new Text(text.value);
+                      },
+                    ),
+                  ),
+                )
+              : Container(),
+          widget.showCalendar
+              ? Expanded(
+                  flex: 4,
+                  child: calendar,
+                )
+              : Container(),
+          _showList | !widget.showCalendar
               ? Expanded(
                   flex: 16,
                   child: ListView.separated(

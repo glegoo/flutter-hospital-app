@@ -37,14 +37,24 @@ class RegisterBtnsPageState extends State<RegisterBtnsPage> {
                     iconName: 'yygh',
                     backgroundColor: new Color(0xff00e19f),
                     buttonClick: () {
-                      routePage(context, RegisterOfficePage());
+                      routePage(
+                          context,
+                          RegisterOfficePage(
+                            showCalendar: true,
+                          ));
                     },
                   ),
                   SubAppBtn(
                     title: '当日挂号',
                     iconName: 'drgh',
                     backgroundColor: new Color(0xfff8ae00),
-                    buttonClick: null,
+                    buttonClick: () {
+                      routePage(
+                          context,
+                          RegisterOfficePage(
+                            showCalendar: false,
+                          ));
+                    },
                   ),
                   SubAppBtn(
                     title: '医生介绍',

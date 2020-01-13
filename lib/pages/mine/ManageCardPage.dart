@@ -25,10 +25,10 @@ class ManageCardPageState extends State<ManageCardPage> {
                   builder: (context) => AddCardPage(name: TestData.userName)));
               DialogUtils.show(context, '绑卡说明', TestData.bingCardTip);
             },
-            padding: EdgeInsets.fromLTRB(20, 20, 0, 20),
+            padding: EdgeInsets.fromLTRB(15, 20, 0, 20),
             child: Row(
               children: <Widget>[
-                Image.asset('static/images/userIcon.png', height: 100),
+                Image.asset('static/images/userIcon.png', height: 80),
                 Container(
                   padding: EdgeInsets.only(left: 20),
                   child: Column(
@@ -39,7 +39,7 @@ class ManageCardPageState extends State<ManageCardPage> {
                             TextSpan(
                               text: TestData.userName,
                               style: TextStyle(
-                                fontSize: 25,
+                                fontSize: 22,
                                 color: Colors.grey[700],
                               ),
                             ),

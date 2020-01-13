@@ -5,6 +5,8 @@ import 'package:hospital_app/pages/sub/RegisterCalendarPage.dart';
 import 'package:hospital_app/utils/PageRouteUtils.dart';
 
 class RegisterOfficePage extends StatefulWidget {
+  final bool showCalendar;
+  RegisterOfficePage({Key key, this.showCalendar}) : super(key: key);
   RegisterOfficePageState createState() => new RegisterOfficePageState();
 }
 
@@ -78,7 +80,11 @@ class RegisterOfficePageState extends State<RegisterOfficePage> {
             _curIndex = index;
           });
         } else {
-          routePage(context, RegisterCalendarPage());
+          routePage(
+              context,
+              RegisterCalendarPage(
+                showCalendar: widget.showCalendar,
+              ));
         }
       },
     );
