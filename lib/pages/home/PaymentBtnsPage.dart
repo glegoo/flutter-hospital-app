@@ -17,6 +17,7 @@ class PaymentBtnsPageState extends State<PaymentBtnsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: Text("支付结算"),
         backgroundColor: GlobalConfig.topBarColor,
       ),
       body: new Container(
@@ -58,7 +59,9 @@ class PaymentBtnsPageState extends State<PaymentBtnsPage> {
                     title: '缴费记录',
                     iconName: 'jfjl',
                     backgroundColor: new Color(0xffe289d9),
-                    buttonClick: null,
+                    buttonClick: () {
+                      routePage(context, PaymentPage());
+                    },
                   ),
                 ],
               ),

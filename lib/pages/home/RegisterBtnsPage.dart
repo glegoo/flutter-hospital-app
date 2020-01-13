@@ -21,6 +21,7 @@ class RegisterBtnsPageState extends State<RegisterBtnsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: Text("挂号就诊"),
         backgroundColor: GlobalConfig.topBarColor,
       ),
       body: new Container(

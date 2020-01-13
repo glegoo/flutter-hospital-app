@@ -18,6 +18,7 @@ class TreatmentBtnsPageState extends State<TreatmentBtnsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: Text("治疗方案"),
         backgroundColor: GlobalConfig.topBarColor,
       ),
       body: new Container(

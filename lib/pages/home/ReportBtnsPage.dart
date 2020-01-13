@@ -16,6 +16,7 @@ class ReportBtnsPageState extends State<ReportBtnsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: Text("检查报告"),
         backgroundColor: GlobalConfig.topBarColor,
       ),
       body: new Container(
