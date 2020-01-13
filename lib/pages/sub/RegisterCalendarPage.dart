@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hospital_app/common/GlobalConfig.dart';
 import 'package:flutter_custom_calendar/flutter_custom_calendar.dart';
 import 'package:hospital_app/common/TestData.dart';
+import 'package:hospital_app/utils/ScreenUtils.dart';
 
 class RegisterCalendarPage extends StatefulWidget {
   RegisterCalendarPageState createState() => new RegisterCalendarPageState();
@@ -67,7 +68,7 @@ class RegisterCalendarPageState extends State<RegisterCalendarPage> {
             ),
           ),
           Expanded(
-            flex: 3,
+            flex: 4,
             child: calendar,
           ),
           _showList
@@ -116,7 +117,7 @@ class RegisterCalendarPageState extends State<RegisterCalendarPage> {
           ),
           Container(
             padding: EdgeInsets.only(left: 20),
-            width: 280,
+            width: Screen.width - 100,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -126,7 +127,7 @@ class RegisterCalendarPageState extends State<RegisterCalendarPage> {
                   child: Text(
                     info['name'],
                     style: TextStyle(
-                      fontSize: 22,
+                      fontSize: 18,
                       color: Colors.grey[800],
                     ),
                   ),
@@ -137,7 +138,7 @@ class RegisterCalendarPageState extends State<RegisterCalendarPage> {
                     alignment: Alignment.centerLeft,
                     child: Text(
                       '挂号级别：${info['title']}\n出诊科室：${info['office']}',
-                      style: TextStyle(color: Colors.grey[600], fontSize: 18),
+                      style: TextStyle(color: Colors.grey[600], fontSize: 16),
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
