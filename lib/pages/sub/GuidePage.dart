@@ -12,7 +12,7 @@ class GuidePageState extends State<GuidePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: GlobalConfig.topBarColor,
-        title: Text('${TestData.userName} 报告单'),
+        title: Text('就医指南'),
       ),
       body: Container(
         alignment: Alignment.center,

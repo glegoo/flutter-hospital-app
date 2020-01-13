@@ -66,20 +66,20 @@ class ReportBtnsPageState extends State<ReportBtnsPage> {
                 ],
               ),
             ),
-            new Container(
-              padding: EdgeInsets.only(top: 20),
-              child: new Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  SubAppBtn(
-                    title: '智能导诊',
-                    iconName: 'zndz',
-                    backgroundColor: new Color(0xff3597fa),
-                    buttonClick: null,
-                  ),
-                ],
-              ),
-            ),
+            // new Container(
+            //   padding: EdgeInsets.only(top: 20),
+            //   child: new Row(
+            //     mainAxisAlignment: MainAxisAlignment.start,
+            //     children: <Widget>[
+            //       SubAppBtn(
+            //         title: '智能导诊',
+            //         iconName: 'zndz',
+            //         backgroundColor: new Color(0xff3597fa),
+            //         buttonClick: null,
+            //       ),
+            //     ],
+            //   ),
+            // ),
           ],
         ),
       ),
