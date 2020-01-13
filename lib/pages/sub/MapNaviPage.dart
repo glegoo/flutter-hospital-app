@@ -69,7 +69,7 @@ class MapNaviPageState extends State<MapNaviPage> {
                       return Positioned(
                         child: Container(
                           width: 300,
-                          height: 400,
+                          height: 300,
                           child: CameraPreview(_cameraController),
                         ),
                       );
@@ -81,20 +81,22 @@ class MapNaviPageState extends State<MapNaviPage> {
                 )
               : Container(),
           Positioned(
-            top: _ar ? 400 : 0,
+            top: _ar ? 300 : 0,
             right: 0,
             left: 0,
             bottom: 0,
             child: Container(
               height: Screen.height / 2,
-              child: PhotoView(
-                tightMode: true,
-                initialScale: PhotoViewComputedScale.covered * 1.2,
-                minScale: PhotoViewComputedScale.covered,
-                maxScale: PhotoViewComputedScale.covered * 3,
-                imageProvider: AssetImage('static/images/map.png'),
-                backgroundDecoration:
-                    BoxDecoration(color: GlobalConfig.backgroundColor),
+              child: ClipRect(
+                child: PhotoView(
+                  tightMode: true,
+                  initialScale: PhotoViewComputedScale.covered * 1.2,
+                  minScale: PhotoViewComputedScale.covered,
+                  maxScale: PhotoViewComputedScale.covered * 3,
+                  imageProvider: AssetImage('static/images/map.png'),
+                  backgroundDecoration:
+                      BoxDecoration(color: GlobalConfig.backgroundColor),
+                ),
               ),
             ),
           ),

@@ -41,7 +41,7 @@ class ParkingPageState extends State<ParkingPage> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 100),
+                  padding: EdgeInsets.only(left: Screen.width - 280),
                   child: Checkbox(
                     value: _select,
                     onChanged: (value) {
