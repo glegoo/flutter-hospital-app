@@ -26,15 +26,15 @@ class AddCardPageState extends State<AddCardPage> {
         children: <Widget>[
           FlatButton(
             onPressed: () {},
-            padding: EdgeInsets.fromLTRB(20, 20, 0, 20),
+            padding: EdgeInsets.fromLTRB(15, 20, 0, 20),
             child: Row(
               children: <Widget>[
-                Image.asset('static/images/id_card.png', height: 80),
+                Image.asset('static/images/id_card.png', height: 70),
                 Container(
                   padding: EdgeInsets.only(left: 15),
                   child: Text(
                     '病历号：${TestData.userHospitalId}\n手机号：${TestData.userPhone}',
-                    style: TextStyle(color: Colors.grey[700], fontSize: 14),
+                    style: TextStyle(color: Colors.grey[700], fontSize: 13),
                   ),
                 ),
                 Checkbox(
@@ -55,12 +55,12 @@ class AddCardPageState extends State<AddCardPage> {
           ),
           FlatButton(
             onPressed: () {},
-            padding: EdgeInsets.fromLTRB(20, 20, 0, 20),
+            padding: EdgeInsets.fromLTRB(15, 20, 0, 20),
             child: Row(
               children: <Widget>[
                 Container(
-                  width: 125,
-                  height: 80,
+                  width: 112,
+                  height: 70,
                   decoration: BoxDecoration(
                     color: Colors.grey[600],
                     borderRadius: BorderRadius.all(
@@ -74,7 +74,7 @@ class AddCardPageState extends State<AddCardPage> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 20),
+                  padding: EdgeInsets.only(left: 15),
                   child: Text(
                     '点击绑定新卡',
                     style: TextStyle(color: Colors.grey[700], fontSize: 16),
