@@ -6,6 +6,7 @@ import 'package:hospital_app/pages/sub/DoctorPage.dart';
 import 'package:hospital_app/pages/sub/GuidePage.dart';
 import 'package:hospital_app/pages/sub/MapNaviPage.dart';
 import 'package:hospital_app/pages/sub/PeCalendarPage.dart';
+import 'package:hospital_app/pages/sub/PeCartPage.dart';
 import 'package:hospital_app/pages/sub/PeGuidePage.dart';
 import 'package:hospital_app/pages/sub/RegisterOfficePage.dart';
 import 'package:hospital_app/pages/sub/TextNaviPage.dart';
@@ -86,7 +87,9 @@ class RegisterBtnsPageState extends State<RegisterBtnsPage> {
                     title: '体检购物车',
                     iconName: 'tjgwc',
                     backgroundColor: new Color(0xff3597fa),
-                    buttonClick: null,
+                    buttonClick: () {
+                      routePage(context, PeCartPage());
+                    },
                   ),
                   SubAppBtn(
                     title: '体检简介',
@@ -132,7 +135,14 @@ class RegisterBtnsPageState extends State<RegisterBtnsPage> {
                     title: '智能导诊',
                     iconName: 'zndz',
                     backgroundColor: new Color(0xff4cc4f9),
-                    buttonClick: null,
+                    buttonClick: () async {
+                      final cameras = await availableCameras();
+                      if (cameras.length > 0) {
+                        routePage(context, MapNaviPage(camera: cameras[0]));
+                      } else {
+                        Center(child: Text('No Cameras'));
+                      }
+                    },
                   ),
                   SubAppBtn(
                     title: '患者评价',
@@ -145,27 +155,6 @@ class RegisterBtnsPageState extends State<RegisterBtnsPage> {
                     iconName: 'tjdd',
                     backgroundColor: new Color(0xff05e4ad),
                     buttonClick: null,
-                  ),
-                ],
-              ),
-            ),
-            new Container(
-              padding: EdgeInsets.only(top: 20),
-              child: new Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  SubAppBtn(
-                    title: '地图导航',
-                    iconName: 'dtdh',
-                    backgroundColor: new Color(0xff05e4ad),
-                    buttonClick: () async {
-                      final cameras = await availableCameras();
-                      if (cameras.length > 0) {
-                        routePage(context, MapNaviPage(camera: cameras[0]));
-                      } else {
-                        Center(child: Text('No Cameras'));
-                      }
-                    },
                   ),
                 ],
               ),

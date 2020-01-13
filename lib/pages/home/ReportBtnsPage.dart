@@ -1,7 +1,9 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:hospital_app/common/GlobalConfig.dart';
 import 'package:hospital_app/common/TestData.dart';
 import 'package:hospital_app/pages/sub/GuidePage.dart';
+import 'package:hospital_app/pages/sub/MapNaviPage.dart';
 import 'package:hospital_app/pages/sub/ReportPage.dart';
 import 'package:hospital_app/utils/DialogUtils.dart';
 import 'package:hospital_app/utils/PageRouteUtils.dart';
@@ -67,20 +69,27 @@ class ReportBtnsPageState extends State<ReportBtnsPage> {
                 ],
               ),
             ),
-            // new Container(
-            //   padding: EdgeInsets.only(top: 20),
-            //   child: new Row(
-            //     mainAxisAlignment: MainAxisAlignment.start,
-            //     children: <Widget>[
-            //       SubAppBtn(
-            //         title: '智能导诊',
-            //         iconName: 'zndz',
-            //         backgroundColor: new Color(0xff3597fa),
-            //         buttonClick: null,
-            //       ),
-            //     ],
-            //   ),
-            // ),
+            new Container(
+              padding: EdgeInsets.only(top: 20),
+              child: new Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  SubAppBtn(
+                    title: '智能导诊',
+                    iconName: 'zndz',
+                    backgroundColor: new Color(0xff3597fa),
+                    buttonClick: () async {
+                      final cameras = await availableCameras();
+                      if (cameras.length > 0) {
+                        routePage(context, MapNaviPage(camera: cameras[0]));
+                      } else {
+                        Center(child: Text('No Cameras'));
+                      }
+                    },
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
