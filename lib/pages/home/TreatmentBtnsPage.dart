@@ -3,6 +3,7 @@ import 'package:hospital_app/common/GlobalConfig.dart';
 import 'package:hospital_app/pages/mine/AboutPage.dart';
 import 'package:hospital_app/pages/sub/DoctorPage.dart';
 import 'package:hospital_app/pages/sub/GuidePage.dart';
+import 'package:hospital_app/pages/sub/PeGuidePage.dart';
 import 'package:hospital_app/pages/sub/RecipePage.dart';
 import 'package:hospital_app/pages/sub/ReviewPage.dart';
 import 'package:hospital_app/utils/PageRouteUtils.dart';
@@ -49,7 +50,9 @@ class TreatmentBtnsPageState extends State<TreatmentBtnsPage> {
                     title: '体检简介',
                     iconName: 'tjjj',
                     backgroundColor: new Color(0xff4cc4f9),
-                    buttonClick: null,
+                    buttonClick: () {
+                      routePage(context, PeGuidePage());
+                    },
                   ),
                   SubAppBtn(
                     title: '就医指南',

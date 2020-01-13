@@ -5,6 +5,7 @@ import 'package:hospital_app/pages/mine/AboutPage.dart';
 import 'package:hospital_app/pages/sub/DoctorPage.dart';
 import 'package:hospital_app/pages/sub/GuidePage.dart';
 import 'package:hospital_app/pages/sub/MapNaviPage.dart';
+import 'package:hospital_app/pages/sub/PeCalendarPage.dart';
 import 'package:hospital_app/pages/sub/PeGuidePage.dart';
 import 'package:hospital_app/pages/sub/RegisterOfficePage.dart';
 import 'package:hospital_app/pages/sub/TextNaviPage.dart';
@@ -68,7 +69,9 @@ class RegisterBtnsPageState extends State<RegisterBtnsPage> {
                     title: '体检预约',
                     iconName: 'tjyy',
                     backgroundColor: new Color(0xffe289d9),
-                    buttonClick: null,
+                    buttonClick: () {
+                      routePage(context, PeCalendarPage());
+                    },
                   ),
                 ],
               ),
