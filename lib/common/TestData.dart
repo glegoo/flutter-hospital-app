@@ -157,6 +157,7 @@ class TestData {
   static var reviews = [
     {
       'type': 'time',
+      'time': DateTime(2019, 6, 1),
       'count': 1,
     },
     {
@@ -167,6 +168,21 @@ class TestData {
     {
       'type': 'used',
       'time': DateTime(2019, 3, 5, 12, 27),
+    },
+  ];
+  static var peOrders = [
+    {
+      'type': 'time',
+      'time': DateTime(2019, 6, 1),
+    },
+    {
+      'type': 'unuse',
+      'date': DateTime(2019, 5, 30, 11, 22),
+      'time': DateTime(2019, 6, 1, 8, 00),
+    },
+    {
+      'type': 'used',
+      'time': DateTime(2019, 3, 5, 8, 00),
     },
   ];
   static String version = 'v1.05';

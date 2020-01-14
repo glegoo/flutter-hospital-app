@@ -1,16 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:hospital_app/common/GlobalConfig.dart';
 import 'package:hospital_app/common/TestData.dart';
+import 'package:hospital_app/pages/sub/EncylopediaListPage.dart';
+import 'package:hospital_app/pages/sub/EncylopediaPage.dart';
 import 'package:hospital_app/pages/sub/RegisterCalendarPage.dart';
 import 'package:hospital_app/utils/PageRouteUtils.dart';
 
-class RegisterOfficePage extends StatefulWidget {
-  final bool showCalendar;
-  RegisterOfficePage({Key key, this.showCalendar}) : super(key: key);
-  RegisterOfficePageState createState() => new RegisterOfficePageState();
+enum SelectType {
+  preRegister,
+  register,
+  encylopedia,
 }
 
-class RegisterOfficePageState extends State<RegisterOfficePage> {
+class SelectOfficePage extends StatefulWidget {
+  final SelectType selectType;
+  SelectOfficePage({Key key, this.selectType}) : super(key: key);
+  SelectOfficePageState createState() => new SelectOfficePageState();
+}
+
+class SelectOfficePageState extends State<SelectOfficePage> {
   int _curIndex = 0;
 
   @override
@@ -19,7 +27,8 @@ class RegisterOfficePageState extends State<RegisterOfficePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: GlobalConfig.topBarColor,
-        title: Text('挂号'),
+        title:
+            Text(widget.selectType == SelectType.encylopedia ? '健康百科' : '挂号'),
       ),
       body: Flex(
         direction: Axis.horizontal,
@@ -81,10 +90,13 @@ class RegisterOfficePageState extends State<RegisterOfficePage> {
           });
         } else {
           routePage(
-              context,
-              RegisterCalendarPage(
-                showCalendar: widget.showCalendar,
-              ));
+            context,
+            widget.selectType == SelectType.encylopedia
+                ? EncylopediaListPage()
+                : RegisterCalendarPage(
+                    showCalendar: widget.selectType == SelectType.preRegister,
+                  ),
+          );
         }
       },
     );

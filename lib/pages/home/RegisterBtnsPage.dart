@@ -8,7 +8,8 @@ import 'package:hospital_app/pages/sub/MapNaviPage.dart';
 import 'package:hospital_app/pages/sub/PeCalendarPage.dart';
 import 'package:hospital_app/pages/sub/PeCartPage.dart';
 import 'package:hospital_app/pages/sub/PeGuidePage.dart';
-import 'package:hospital_app/pages/sub/RegisterOfficePage.dart';
+import 'package:hospital_app/pages/sub/PeOrderPage.dart';
+import 'package:hospital_app/pages/sub/SelectOfficePage.dart';
 import 'package:hospital_app/pages/sub/TextNaviPage.dart';
 import 'package:hospital_app/utils/PageRouteUtils.dart';
 import 'package:hospital_app/widget/SubAppBtn.dart';
@@ -42,8 +43,8 @@ class RegisterBtnsPageState extends State<RegisterBtnsPage> {
                     buttonClick: () {
                       routePage(
                           context,
-                          RegisterOfficePage(
-                            showCalendar: true,
+                          SelectOfficePage(
+                            selectType: SelectType.preRegister,
                           ));
                     },
                   ),
@@ -54,8 +55,8 @@ class RegisterBtnsPageState extends State<RegisterBtnsPage> {
                     buttonClick: () {
                       routePage(
                           context,
-                          RegisterOfficePage(
-                            showCalendar: false,
+                          SelectOfficePage(
+                            selectType: SelectType.register,
                           ));
                     },
                   ),
@@ -154,7 +155,9 @@ class RegisterBtnsPageState extends State<RegisterBtnsPage> {
                     title: '体检订单',
                     iconName: 'tjdd',
                     backgroundColor: new Color(0xff05e4ad),
-                    buttonClick: null,
+                    buttonClick: () {
+                      routePage(context, PeOrderPage());
+                    },
                   ),
                 ],
               ),

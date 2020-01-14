@@ -6,6 +6,7 @@ import 'package:hospital_app/pages/sub/GuidePage.dart';
 import 'package:hospital_app/pages/sub/PeGuidePage.dart';
 import 'package:hospital_app/pages/sub/RecipePage.dart';
 import 'package:hospital_app/pages/sub/ReviewPage.dart';
+import 'package:hospital_app/pages/sub/SelectOfficePage.dart';
 import 'package:hospital_app/utils/PageRouteUtils.dart';
 import 'package:hospital_app/widget/SubAppBtn.dart';
 
@@ -75,7 +76,13 @@ class TreatmentBtnsPageState extends State<TreatmentBtnsPage> {
                     title: '健康百科',
                     iconName: 'jkbk',
                     backgroundColor: new Color(0xff3597fa),
-                    buttonClick: null,
+                    buttonClick: () {
+                      routePage(
+                          context,
+                          SelectOfficePage(
+                            selectType: SelectType.encylopedia,
+                          ));
+                    },
                   ),
                   SubAppBtn(
                     title: '用药处方',

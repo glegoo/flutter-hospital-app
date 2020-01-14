@@ -4,6 +4,7 @@ import 'package:hospital_app/common/TestData.dart';
 import 'package:hospital_app/pages/sub/ParkingPage.dart';
 import 'package:hospital_app/pages/sub/PaymentPage.dart';
 import 'package:hospital_app/pages/sub/PeCartPage.dart';
+import 'package:hospital_app/pages/sub/PeOrderPage.dart';
 import 'package:hospital_app/utils/DialogUtils.dart';
 import 'package:hospital_app/utils/PageRouteUtils.dart';
 import 'package:hospital_app/widget/SubAppBtn.dart';
@@ -52,7 +53,7 @@ class PaymentBtnsPageState extends State<PaymentBtnsPage> {
                     iconName: 'tjdd',
                     backgroundColor: new Color(0xff4cc4f9),
                     buttonClick: () {
-                      routePage(context, PeCartPage());
+                      routePage(context, PeOrderPage());
                     },
                   ),
                   SubAppBtn(

@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:hospital_app/common/GlobalConfig.dart';
 import 'package:hospital_app/pages/sub/PeCalendarPage.dart';
+import 'package:hospital_app/pages/sub/PeOrderPage.dart';
 import 'package:hospital_app/utils/PageRouteUtils.dart';
 import 'package:hospital_app/utils/ScreenUtils.dart';
 
@@ -37,7 +38,7 @@ class PeCartPageState extends State<PeCartPage> {
                           color: GlobalConfig.textLinkColor, fontSize: 16),
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
-                          // routePage(context, PeCalendarPage());
+                          routePage(context, PeOrderPage());
                         },
                     ),
                   ],
