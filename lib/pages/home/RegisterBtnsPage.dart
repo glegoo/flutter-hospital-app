@@ -5,6 +5,7 @@ import 'package:hospital_app/pages/mine/AboutPage.dart';
 import 'package:hospital_app/pages/sub/DoctorPage.dart';
 import 'package:hospital_app/pages/sub/GuidePage.dart';
 import 'package:hospital_app/pages/sub/MapNaviPage.dart';
+import 'package:hospital_app/pages/sub/PatientReviewPage.dart';
 import 'package:hospital_app/pages/sub/PeCalendarPage.dart';
 import 'package:hospital_app/pages/sub/PeCartPage.dart';
 import 'package:hospital_app/pages/sub/PeGuidePage.dart';
@@ -149,7 +150,9 @@ class RegisterBtnsPageState extends State<RegisterBtnsPage> {
                     title: '患者评价',
                     iconName: 'hzpj',
                     backgroundColor: new Color(0xfff8ad69),
-                    buttonClick: null,
+                    buttonClick: () {
+                      routePage(context, PatientReviewPage());
+                    },
                   ),
                   SubAppBtn(
                     title: '体检订单',

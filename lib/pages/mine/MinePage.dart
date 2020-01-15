@@ -10,9 +10,6 @@ import 'package:hospital_app/pages/mine/SubscribePage.dart';
 import 'package:hospital_app/utils/ScreenUtils.dart';
 
 class MinePage extends StatefulWidget {
-  String dataDay;
-
-  MinePage({Key key, this.dataDay}) : super(key: key);
 
   MinePageState createState() => new MinePageState();
 }
@@ -21,7 +18,7 @@ class MinePageState extends State<MinePage> {
   @override
   Widget build(BuildContext context) {
     return new Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
         Container(
           width: Screen.width,
