@@ -66,7 +66,11 @@ class RegisterBtnsPageState extends State<RegisterBtnsPage> {
                     iconName: 'ysjs',
                     backgroundColor: new Color(0xff4cc4f9),
                     buttonClick: () {
-                      routePage(context, DoctorPage());
+                      routePage(
+                          context,
+                          DoctorPage(
+                            favorate: false,
+                          ));
                     },
                   ),
                   SubAppBtn(

@@ -5,6 +5,8 @@ import 'package:hospital_app/pages/sub/DoctorDetailPage.dart';
 import 'package:hospital_app/utils/ScreenUtils.dart';
 
 class DoctorPage extends StatefulWidget {
+  final bool favorate;
+  DoctorPage({Key key, this.favorate}) : super(key: key);
   DoctorPageState createState() => new DoctorPageState();
 }
 
@@ -52,7 +54,7 @@ class DoctorPageState extends State<DoctorPage> {
         backgroundColor: GlobalConfig.topBarColor,
       ),
       body: ListView.separated(
-        itemCount: _doctors.length,
+        itemCount: widget.favorate ? 1 : _doctors.length,
         itemBuilder: _buildRow,
         separatorBuilder: (BuildContext context, int index) {
           return Divider(

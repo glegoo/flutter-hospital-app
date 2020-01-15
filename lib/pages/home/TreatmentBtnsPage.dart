@@ -45,7 +45,11 @@ class TreatmentBtnsPageState extends State<TreatmentBtnsPage> {
                     iconName: 'ysjs',
                     backgroundColor: new Color(0xfff8ae00),
                     buttonClick: () {
-                      routePage(context, DoctorPage());
+                      routePage(
+                          context,
+                          DoctorPage(
+                            favorate: false,
+                          ));
                     },
                   ),
                   SubAppBtn(
