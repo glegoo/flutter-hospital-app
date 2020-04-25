@@ -3,6 +3,7 @@ import 'package:hospital_app/common/GlobalConfig.dart';
 import 'package:hospital_app/common/TestData.dart';
 import 'package:hospital_app/pages/sub/TreatmentChatPage.dart';
 import 'package:hospital_app/utils/ScreenUtils.dart';
+import 'package:image_picker/image_picker.dart';
 
 class OnlineTreatmentPage extends StatefulWidget {
   final int doctorId;
@@ -14,9 +15,26 @@ class OnlineTreatmentPageState extends State<OnlineTreatmentPage> {
   final _key1 = GlobalKey<FormState>();
   final _key2 = GlobalKey<FormState>();
   var _step = 0;
+  var _imgPath;
+  String _name;
+  String _phone;
+  String _height;
+  String _weight;
+  String _family;
+  String _guomin;
+  String _bingqing;
+  String _bangzhu;
+
   @override
   void initState() {
     super.initState();
+  }
+
+  _openGallery() async {
+    var image = await ImagePicker.pickImage(source: ImageSource.gallery);
+    setState(() {
+      _imgPath = image;
+    });
   }
 
   @override
@@ -53,6 +71,9 @@ class OnlineTreatmentPageState extends State<OnlineTreatmentPage> {
                               }
                               return null;
                             },
+                            onSaved: (val) {
+                              _name = val;
+                            },
                           ),
                           TextFormField(
                             keyboardType: TextInputType.phone,
@@ -67,20 +88,31 @@ class OnlineTreatmentPageState extends State<OnlineTreatmentPage> {
                               }
                               return null;
                             },
+                            onSaved: (val) {
+                              _phone = val;
+                            },
                           ),
                           TextFormField(
+                            keyboardType: TextInputType.number,
                             decoration: const InputDecoration(
                               contentPadding: EdgeInsets.all(10),
                               labelText: '身高(cm)',
                               hintText: '选填',
                             ),
+                            onSaved: (val) {
+                              _height = val;
+                            },
                           ),
                           TextFormField(
+                            keyboardType: TextInputType.number,
                             decoration: const InputDecoration(
                               contentPadding: EdgeInsets.all(10),
                               labelText: '体重(kg)',
                               hintText: '选填',
                             ),
+                            onSaved: (val) {
+                              _weight = val;
+                            },
                           ),
                           TextFormField(
                             decoration: const InputDecoration(
@@ -88,6 +120,9 @@ class OnlineTreatmentPageState extends State<OnlineTreatmentPage> {
                               labelText: '家族病史',
                               hintText: '选填',
                             ),
+                            onSaved: (val) {
+                              _family = val;
+                            },
                           ),
                           TextFormField(
                             decoration: const InputDecoration(
@@ -95,6 +130,9 @@ class OnlineTreatmentPageState extends State<OnlineTreatmentPage> {
                               labelText: '过敏史',
                               hintText: '选填',
                             ),
+                            onSaved: (val) {
+                              _guomin = val;
+                            },
                           ),
                           Container(
                             padding: EdgeInsets.only(top: 20),
@@ -102,6 +140,7 @@ class OnlineTreatmentPageState extends State<OnlineTreatmentPage> {
                             child: FlatButton(
                               onPressed: () {
                                 if (_key1.currentState.validate()) {
+                                  _key1.currentState.save();
                                   setState(() {
                                     _step = 1;
                                   });
@@ -137,9 +176,12 @@ class OnlineTreatmentPageState extends State<OnlineTreatmentPage> {
                                 hintText: '请详细描述您的病情症状，以便医生确认接诊'),
                             validator: (value) {
                               if (value.isEmpty) {
-                                return '请输入姓名';
+                                return '请输入病情';
                               }
                               return null;
+                            },
+                            onSaved: (val) {
+                              _bingqing = val;
                             },
                           ),
                           Padding(
@@ -159,6 +201,9 @@ class OnlineTreatmentPageState extends State<OnlineTreatmentPage> {
                                 return '必填';
                               }
                               return null;
+                            },
+                            onSaved: (val) {
+                              _bangzhu = val;
                             },
                           ),
                           TextFormField(
@@ -188,15 +233,44 @@ class OnlineTreatmentPageState extends State<OnlineTreatmentPage> {
                                 labelText: '已就诊医院、科室（选填）',
                                 hintText: ''),
                           ),
+                          Padding(
+                            padding: EdgeInsets.all(10),
+                            child: Text('添加图片（患处、检查报告等）'),
+                          ),
+                          Container(
+                            padding: EdgeInsets.all(10),
+                            alignment: Alignment.centerLeft,
+                            child: FlatButton(
+                              onPressed: _openGallery,
+                              color: GlobalConfig.topBarColor,
+                              textColor: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(5))),
+                              child: Text(
+                                '选择照片',
+                                style: TextStyle(fontSize: 16),
+                              ),
+                            ),
+                          ),
                           Container(
                             padding: EdgeInsets.only(top: 20),
                             alignment: Alignment.center,
                             child: FlatButton(
                               onPressed: () {
                                 if (_key2.currentState.validate()) {
+                                  _key2.currentState.save();
                                   Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) =>
-                                          TreatmentChatPage()));
+                                      builder: (context) => TreatmentChatPage(
+                                            name: _name,
+                                            height: _height,
+                                            weight: _weight,
+                                            phone: _phone,
+                                            guomin: _guomin,
+                                            family: _family,
+                                            bingqing: _bingqing,
+                                            bangzhu: _bangzhu,
+                                          )));
                                 }
                               },
                               color: GlobalConfig.topBarColor,
