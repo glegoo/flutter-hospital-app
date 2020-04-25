@@ -19,7 +19,7 @@ class TreatmentBtnsPageState extends State<TreatmentBtnsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("治疗方案"),
+        title: Text("互联网医院"),
         backgroundColor: GlobalConfig.topBarColor,
       ),
       body: new Container(
@@ -33,27 +33,19 @@ class TreatmentBtnsPageState extends State<TreatmentBtnsPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   SubAppBtn(
-                    title: '医院介绍',
-                    iconName: 'yyjs',
-                    backgroundColor: new Color(0xff00e19f),
-                    buttonClick: () {
-                      routePage(context, AboutPage());
-                    },
-                  ),
-                  SubAppBtn(
-                    title: '医生介绍',
+                    title: '在线问诊',
                     iconName: 'ysjs',
                     backgroundColor: new Color(0xfff8ae00),
                     buttonClick: () {
                       routePage(
                           context,
-                          DoctorPage(
-                            favorate: false,
+                          SelectOfficePage(
+                            selectType: SelectType.onlineTreatment,
                           ));
                     },
                   ),
                   SubAppBtn(
-                    title: '体检简介',
+                    title: '在线复诊',
                     iconName: 'tjjj',
                     backgroundColor: new Color(0xff4cc4f9),
                     buttonClick: () {
@@ -61,11 +53,19 @@ class TreatmentBtnsPageState extends State<TreatmentBtnsPage> {
                     },
                   ),
                   SubAppBtn(
-                    title: '就医指南',
+                    title: '药品快递',
                     iconName: 'jyzn',
                     backgroundColor: new Color(0xffe289d9),
                     buttonClick: () {
                       routePage(context, GuidePage());
+                    },
+                  ),
+                  SubAppBtn(
+                    title: '用药处方',
+                    iconName: 'yycf',
+                    backgroundColor: new Color(0xffe289d9),
+                    buttonClick: () {
+                      routePage(context, RecipePage());
                     },
                   ),
                 ],
@@ -77,6 +77,22 @@ class TreatmentBtnsPageState extends State<TreatmentBtnsPage> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   SubAppBtn(
+                    title: '复查计划',
+                    iconName: 'fcjh',
+                    backgroundColor: new Color(0xff05e4ad),
+                    buttonClick: () {
+                      routePage(context, ReviewPage());
+                    },
+                  ),
+                  SubAppBtn(
+                    title: '医院介绍',
+                    iconName: 'yyjs',
+                    backgroundColor: new Color(0xff00e19f),
+                    buttonClick: () {
+                      routePage(context, AboutPage());
+                    },
+                  ),
+                  SubAppBtn(
                     title: '健康百科',
                     iconName: 'jkbk',
                     backgroundColor: new Color(0xff3597fa),
@@ -86,22 +102,6 @@ class TreatmentBtnsPageState extends State<TreatmentBtnsPage> {
                           SelectOfficePage(
                             selectType: SelectType.encylopedia,
                           ));
-                    },
-                  ),
-                  SubAppBtn(
-                    title: '用药处方',
-                    iconName: 'yycf',
-                    backgroundColor: new Color(0xffe289d9),
-                    buttonClick: () {
-                      routePage(context, RecipePage());
-                    },
-                  ),
-                  SubAppBtn(
-                    title: '复查计划',
-                    iconName: 'fcjh',
-                    backgroundColor: new Color(0xff05e4ad),
-                    buttonClick: () {
-                      routePage(context, ReviewPage());
                     },
                   ),
                 ],

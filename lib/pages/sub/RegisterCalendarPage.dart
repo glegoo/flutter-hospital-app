@@ -4,9 +4,12 @@ import 'package:flutter_custom_calendar/flutter_custom_calendar.dart';
 import 'package:hospital_app/common/TestData.dart';
 import 'package:hospital_app/utils/ScreenUtils.dart';
 
+import 'DoctorDetailPage.dart';
+import 'SelectOfficePage.dart';
+
 class RegisterCalendarPage extends StatefulWidget {
-  final bool showCalendar;
-  RegisterCalendarPage({Key key, this.showCalendar}) : super(key: key);
+  final SelectType selectType;
+  RegisterCalendarPage({Key key, this.selectType}) : super(key: key);
   RegisterCalendarPageState createState() => new RegisterCalendarPageState();
 }
 
@@ -53,11 +56,11 @@ class RegisterCalendarPageState extends State<RegisterCalendarPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: GlobalConfig.topBarColor,
-        title: Text('预约时间'),
+        title: Text('选择医生'),
       ),
       body: Column(
         children: <Widget>[
-          widget.showCalendar
+          (widget.selectType == SelectType.preRegister)
               ? Expanded(
                   flex: 1,
                   child: Align(
@@ -71,13 +74,13 @@ class RegisterCalendarPageState extends State<RegisterCalendarPage> {
                   ),
                 )
               : Container(),
-          widget.showCalendar
+          (widget.selectType == SelectType.preRegister)
               ? Expanded(
                   flex: 4,
                   child: calendar,
                 )
               : Container(),
-          _showList | !widget.showCalendar
+          _showList | (widget.selectType != SelectType.preRegister)
               ? Expanded(
                   flex: 16,
                   child: ListView.separated(
@@ -107,6 +110,13 @@ class RegisterCalendarPageState extends State<RegisterCalendarPage> {
         // Navigator.of(context).push(MaterialPageRoute(
         //     builder: (context) => AddCardPage(name: TestData.userName)));
         // DialogUtils.show(context, '绑卡说明', TestData.bingCardTip);
+        if (widget.selectType == SelectType.onlineTreatment) {
+          Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => DoctorDetailPage(
+                    doctorId: index,
+                    onlineTreatment: true,
+                  )));
+        }
       },
       padding: EdgeInsets.fromLTRB(20, 20, 0, 20),
       child: Row(

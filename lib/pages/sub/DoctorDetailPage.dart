@@ -3,9 +3,13 @@ import 'package:hospital_app/common/GlobalConfig.dart';
 import 'package:hospital_app/common/TestData.dart';
 import 'package:hospital_app/utils/ScreenUtils.dart';
 
+import 'OnlineTreatmentPage.dart';
+
 class DoctorDetailPage extends StatefulWidget {
   final int doctorId;
-  DoctorDetailPage({Key key, this.doctorId}) : super(key: key);
+  final bool onlineTreatment;
+  DoctorDetailPage({Key key, this.doctorId, this.onlineTreatment})
+      : super(key: key);
   DoctorDetailPageState createState() => new DoctorDetailPageState();
 }
 
@@ -62,64 +66,92 @@ class DoctorDetailPageState extends State<DoctorDetailPage> {
               ],
             ),
           ),
-          Container(
-            padding: EdgeInsets.only(top: 10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                _favorited
-                    ? Container(
-                        width: Screen.width / 2 - 20,
-                        child: FlatButton.icon(
-                          color: Colors.red[100],
-                          icon: Icon(
-                            Icons.favorite,
-                            color: Colors.red,
-                          ),
-                          label: Text(
-                            '已收藏',
-                            style: TextStyle(color: Colors.red),
-                          ),
-                          onPressed: () {
-                            setState(() {
-                              _favorited = !_favorited;
-                            });
-                          },
+          widget.onlineTreatment
+              ? Container(
+                  padding: EdgeInsets.only(top: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      Text(
+                        '￥0.00/次',
+                        style: TextStyle(fontSize: 20),
+                      ),
+                      FlatButton(
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => OnlineTreatmentPage(
+                                  doctorId: widget.doctorId)));
+                        },
+                        color: GlobalConfig.topBarColor,
+                        textColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(5))),
+                        child: Text(
+                          '立即问诊',
+                          style: TextStyle(fontSize: 16),
                         ),
                       )
-                    : Container(
+                    ],
+                  ),
+                )
+              : Container(
+                  padding: EdgeInsets.only(top: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      _favorited
+                          ? Container(
+                              width: Screen.width / 2 - 20,
+                              child: FlatButton.icon(
+                                color: Colors.red[100],
+                                icon: Icon(
+                                  Icons.favorite,
+                                  color: Colors.red,
+                                ),
+                                label: Text(
+                                  '已收藏',
+                                  style: TextStyle(color: Colors.red),
+                                ),
+                                onPressed: () {
+                                  setState(() {
+                                    _favorited = !_favorited;
+                                  });
+                                },
+                              ),
+                            )
+                          : Container(
+                              width: Screen.width / 2 - 20,
+                              child: FlatButton.icon(
+                                color: Colors.red,
+                                icon: Icon(
+                                  Icons.favorite_border,
+                                  color: Colors.white,
+                                ),
+                                label: Text(
+                                  '收藏',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                onPressed: () {
+                                  setState(() {
+                                    _favorited = !_favorited;
+                                  });
+                                },
+                              ),
+                            ),
+                      Container(
                         width: Screen.width / 2 - 20,
-                        child: FlatButton.icon(
-                          color: Colors.red,
-                          icon: Icon(
-                            Icons.favorite_border,
-                            color: Colors.white,
-                          ),
-                          label: Text(
-                            '收藏',
+                        child: FlatButton(
+                          color: GlobalConfig.bottomBarColor,
+                          child: Text(
+                            '挂号',
                             style: TextStyle(color: Colors.white),
                           ),
-                          onPressed: () {
-                            setState(() {
-                              _favorited = !_favorited;
-                            });
-                          },
+                          onPressed: () {},
                         ),
                       ),
-                Container(
-                  width: Screen.width / 2 - 20,
-                  child: FlatButton(
-                    color: GlobalConfig.bottomBarColor,
-                    child: Text(
-                      '挂号',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    onPressed: () {},
+                    ],
                   ),
                 ),
-              ],
-            ),
-          ),
         ],
       ),
     );

@@ -29,6 +29,7 @@ dependencies:
     git:
       url: https://github.com/LXD312569496/flutter_custom_calendar.git
   camera:
+  image_picker:
 
 dev_dependencies:
   flutter_test:

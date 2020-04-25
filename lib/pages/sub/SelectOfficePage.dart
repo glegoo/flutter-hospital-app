@@ -2,15 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:hospital_app/common/GlobalConfig.dart';
 import 'package:hospital_app/common/TestData.dart';
 import 'package:hospital_app/pages/sub/EncylopediaListPage.dart';
-import 'package:hospital_app/pages/sub/EncylopediaPage.dart';
 import 'package:hospital_app/pages/sub/RegisterCalendarPage.dart';
 import 'package:hospital_app/utils/PageRouteUtils.dart';
 
-enum SelectType {
-  preRegister,
-  register,
-  encylopedia,
-}
+enum SelectType { preRegister, register, encylopedia, onlineTreatment }
 
 class SelectOfficePage extends StatefulWidget {
   final SelectType selectType;
@@ -24,11 +19,16 @@ class SelectOfficePageState extends State<SelectOfficePage> {
   @override
   Widget build(BuildContext context) {
     List<String> side = TestData.officeList[_curIndex]['list'] as List<String>;
+    String title = '挂号';
+    if (widget.selectType == SelectType.encylopedia) {
+      title = '健康百科';
+    } else if (widget.selectType == SelectType.onlineTreatment) {
+      title = '在线问诊';
+    }
     return Scaffold(
       appBar: AppBar(
         backgroundColor: GlobalConfig.topBarColor,
-        title:
-            Text(widget.selectType == SelectType.encylopedia ? '健康百科' : '挂号'),
+        title: Text(title),
       ),
       body: Flex(
         direction: Axis.horizontal,
@@ -94,7 +94,7 @@ class SelectOfficePageState extends State<SelectOfficePage> {
             widget.selectType == SelectType.encylopedia
                 ? EncylopediaListPage()
                 : RegisterCalendarPage(
-                    showCalendar: widget.selectType == SelectType.preRegister,
+                    selectType: widget.selectType,
                   ),
           );
         }

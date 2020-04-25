@@ -72,7 +72,10 @@ class DoctorPageState extends State<DoctorPage> {
     return FlatButton(
       onPressed: () {
         Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => DoctorDetailPage(doctorId: index)));
+            builder: (context) => DoctorDetailPage(
+                  doctorId: index,
+                  onlineTreatment: false,
+                )));
       },
       padding: EdgeInsets.fromLTRB(20, 20, 0, 20),
       child: Row(

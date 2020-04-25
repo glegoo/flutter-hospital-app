@@ -21,7 +21,7 @@ class GlobalConfig {
   static String aboutAuthorURl = "https://www.jianshu.com/u/9681f3bbb8c2";
   static String thanksEditURl = "https://gank.io/backbone";
 
-  static String appName = "沈阳未命名医院";
+  static String appName = "沈阳市第六人民医院";
 
   ///导航
   static String homeTab = "首页";
