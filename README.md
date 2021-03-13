@@ -1,6 +1,6 @@
-# hospital_app
+# flutter-hospital-app
 
-A new Flutter project.
+A hospital app(demo) project developed with flutter.
 
 ## Getting Started
 
